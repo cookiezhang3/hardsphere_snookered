@@ -7,13 +7,13 @@ Here is a list of the files.
 
 [hardsphere.py](https://github.com/cookiezhang3/hardsphere_snookered/blob/master/hard_spheres.py) : creates the Ball class and the Container class which inherits from Ball.
 
-Simulation.py : initialises the systems and creates methods for collisions.
+[Simulation.py](https://github.com/cookiezhang3/hardsphere_snookered/blob/master/Simulation.py) : initialises the systems and creates methods for collisions.
 
-test_singleball_collide.py : tests the Simulation class for a single ball in a container.
+[test_singleball_collide.py](https://github.com/cookiezhang3/hardsphere_snookered/blob/master/test_singleball_collide.py) : tests the Simulation class for a single ball in a container.
 
-test_balls_collide.py : visualises collisions between multiple balls in different cases.
+[test_balls_collide.py](https://github.com/cookiezhang3/hardsphere_snookered/blob/master/test_balls_collide.py) : visualises collisions between multiple balls in different cases.
 
-theromo.py : investigates the conservation laws, the relations between variables and the velocity distribution through plots.
+[theromo.py](https://github.com/cookiezhang3/hardsphere_snookered/blob/master/theromo.py) : investigates the conservation laws, the relations between variables and the velocity distribution through plots.
 
 Note that I use Matplotlib Artist for the animations. You need to change the graphics backend to Tkinter for them to work properly. 
 To do this: Tools -> Preferences -> IPython console -> graphics -> graphics backend and set it to Tkinter
