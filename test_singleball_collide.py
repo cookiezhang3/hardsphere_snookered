@@ -6,7 +6,7 @@ Created on Fri Jan 25 09:32:25 2019
 """
 """
 Testing the methods in the Ball class and the Container class; testing the 
-Simulation class for a single ball. (Task 2-5)
+Simulation class for a single ball.
 
 """
 import singleball as sb
