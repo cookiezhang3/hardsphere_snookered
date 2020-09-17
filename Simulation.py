@@ -48,16 +48,24 @@ class Simulation:
         self.temp = 0
         
     def setvel(self):
+         """
+        This method sets random veocities for the balls, which allows
+        investigation of systems with different initial velocities/ KE.
+        """
         for i in range(len(self._balls[1:])):
             self._balls[i].v=np.array([np.random.randint(-400,400),
                        np.random.randint(-400,400),0], dtype="float64")
         
-        """
-        This method sets random veocities for the balls, which allows
-        investigation of systems with different initial velocities/ KE.
-        """
+       
         
     def next_collision(self):
+        """
+        This method loops over the possible collisions between each pair of 
+        balls or a container, finds the minimum time for the next collision
+        and performs the collision. It also counts the total time of a 
+        simulation and the total change of momentum between ball-container 
+        collision for later pressure calculation.
+        """
         p=[]
         for i in range(len(self._balls)):
             for j in range(len(self._balls)):
@@ -85,16 +93,15 @@ class Simulation:
         elif b[1].container== True:
             self.delmom += 2*b[2].m*np.sqrt(np.dot(b[1].vel(),b[1].vel()))
             
-        """
-        This method loops over the possible collisions between each pair of 
-        balls or a container, finds the minimum time for the next collision
-        and performs the collision. It also counts the total time of a 
-        simulation and the total change of momentum between ball-container 
-        collision for later pressure calculation.
-        """
+        
 
 
     def data(self):
+        """
+        I check the conservation ke and momentum here as well as collecting 
+        data of the position and speed of the balls to investigate velocity
+        distribution.
+        """
         keall=0 #the collection of ke of all balls
         momall=0
         for ball in self._balls:
@@ -109,13 +116,15 @@ class Simulation:
         self.total_ke.append(keall/len(self._balls))  #average ke of the system
         self.total_mom.append(momall/len(self._balls)) #average mometum 
 
-        """
-        I check the conservation ke and momentum here as well as collecting 
-        data of the position and speed of the balls to investigate velocity
-        distribution.
-        """
+   
 
     def run(self, num_frames, animate=False):
+        
+        """
+        This method produces animation of the system. It performs one collsion 
+        and collect one set of data in each frame. I calculate the temperature
+        and pressure at the last frame.
+        """
  
         if animate:
             f = plt.figure()
@@ -147,11 +156,7 @@ class Simulation:
         if animate:
             plt.show()
 
-        """
-        This method produces animation of the system. It performs one collsion 
-        and collect one set of data in each frame. I calculate the temperature
-        and pressure at the last frame.
-        """
+     
 
         
     
