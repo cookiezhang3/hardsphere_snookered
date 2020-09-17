@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 #%%
 """
-check Simulation with two balls input (Task 7).
+check Simulation with two balls input.
 """
 b=[hs.Ball(1,1,[-5.,0.,0.],[1.,0.,0.]), hs.Ball(1,1,[4.,0.,0.],[-3.,0.,0.])
    ,hs.Contain(100000,10,[0.0,0.0,0.0],[0.0,0.0,0.0])]
@@ -24,7 +24,7 @@ trail.run(100,True)
 
 #%%
 """
-velocity in x y direction
+velocity in x y direction.
 """
 b=[hs.Ball(1,1,[-5.,0.,0.],[1.,2.,0.]), hs.Ball(1,1,[4.,0.,0.],[-3.,3.,0.])
    ,hs.Contain(100000,10,[0.0,0.0,0.0],[0.0,0.0,0.0])]
@@ -34,7 +34,7 @@ trail.run(100,True)
 
 #%%
 """
-check initialisation-group of balls (Task 8). 
+check initialisation-group of balls. 
 """
 trail=sl.Simulation()
 trail.next_collision()
@@ -42,7 +42,7 @@ trail.run(20,True)
 
 #%%
 """
-plotting histogram for ditance from centre (Task 9).
+plotting histogram for ditance from centre.
 """
 trail=sl.Simulation()
 trail.next_collision()
