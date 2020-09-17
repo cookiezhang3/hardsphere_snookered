@@ -11,6 +11,11 @@ import matplotlib.pyplot as plt
 
 class Ball:
 
+    """
+        This method calculate the time until the next collision. Making an 
+        distinguishment between ball-ball and ball-container collision. 
+    """
+    
     def __init__(self,m,R,r=[0.0,0.0,0.0],v=[0.0,0.0,0.0]):
         self.m=m
         self.R=R
@@ -75,12 +80,15 @@ class Ball:
         else:
             return None       
         
-        """
-        This method calculate the time until the next collision. Making an 
-        distinguishment between ball-ball and ball-container collision. 
-        """
+        
             
     def collide(self,other):
+                
+        """
+        this method make the changes to the velocities of the ball and the 
+        other one due to collision.
+        """
+        
         v=self.v-other.v
         r=self.r-other.r
         r_mag_square=np.dot(r,r)
@@ -91,23 +99,18 @@ class Ball:
         self.v=v1 
         other.v=v2
         #print(r)
-        
-        """
-        this method make the changes to the velocities of the ball and the 
-        other one due to collision.
-        """
+
 
 class Contain(Ball):
     
-    def __init__(self,m,R,r=[0.0,0.0,0.0],v=[0.0,0.0,0.0]):
-        Ball.__init__(self,m,R,r=[0.,0.,0.],v=[0.,0.,0.])
-        self.patch=pl.Circle(self.r, self.R, ec='b', fill=False, ls='solid')
-        self.container=True
-
     """
     The Contain class is inherited from the Ball class. A container has almost 
     the same properties of a ball except that it has great mass and radius.
     """
+    def __init__(self,m,R,r=[0.0,0.0,0.0],v=[0.0,0.0,0.0]):
+        Ball.__init__(self,m,R,r=[0.,0.,0.],v=[0.,0.,0.])
+        self.patch=pl.Circle(self.r, self.R, ec='b', fill=False, ls='solid')
+        self.container=True
 
 
         
