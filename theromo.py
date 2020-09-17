@@ -38,7 +38,7 @@ plt.rcParams.update(params)
 
 #%%
 """
-check conservation of KE (Task 10).
+check conservation of KE.
 """
 
 #plt.grid()
@@ -50,7 +50,7 @@ plt.show()
 
 #%%
 """
-check conservation of mometum (Task 10).
+check conservation of momentum.
 """
 abs_totalmom=[]
 for i in range(len(trail.total_mom)-1):
@@ -63,7 +63,7 @@ plt.plot(abs_totalmom)
 #%%
 """
 Run 15 simulation with different initial velocities. Plot the relationship
-between pressure and temperature (Task 11).
+between pressure and temperature.
 """
     
 P1=np.zeros(15)
@@ -85,7 +85,7 @@ plt.plot(T1,P1, 'ro')
 plt.plot(T1,z(T1))
 
 """
-Investigate the gradient of the P-T graph with greater volume (Task 12).
+Investigate the gradient of the P-T graph with greater volume.
 """
 P2=np.zeros(15)
 T2=np.zeros(15)
